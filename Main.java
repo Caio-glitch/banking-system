@@ -9,7 +9,7 @@ public class Main {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Banco banco = new Banco();
+        banco.Banco banco = new banco.Banco();
 
         int opcao;
 
@@ -42,7 +42,7 @@ public class Main {
                     int numero = sc.nextInt();
                     sc.nextLine();
 
-                    Conta conta = banco.buscarConta(numero);
+                    banco.Conta conta = banco.buscarConta(numero);
 
                     if (conta != null) {
                         System.out.print("Senha: ");
@@ -64,7 +64,7 @@ public class Main {
         sc.close();
     }
 
-    private static void menuConta(Scanner sc, Conta conta, Banco banco) {
+    private static void menuConta(Scanner sc, banco.Conta conta, banco.Banco banco) {
 
         int opcao;
 
@@ -104,7 +104,7 @@ public class Main {
                     System.out.print("Valor: ");
                     double valor = sc.nextDouble();
 
-                    Conta destino = banco.buscarConta(destinoNumero);
+                    banco.Conta destino = banco.buscarConta(destinoNumero);
 
                     if (destino != null) {
                         if (conta.transferir(destino, valor)) {
